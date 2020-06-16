@@ -79,11 +79,11 @@ int main(int argc, char *argv[])
 
     QProcess serverProcess;
 
-    serverProcess.start(serverExePath);
-    if (!serverProcess.waitForStarted()) {
-        qWarning() << "Could not start server:" << serverProcess.errorString();
-        return EXIT_FAILURE;
-    }
+    //serverProcess.start(serverExePath);
+    //if (!serverProcess.waitForStarted()) {
+    //    qWarning() << "Could not start server:" << serverProcess.errorString();
+    //    return EXIT_FAILURE;
+    //}
 
     OpcUaMachineBackend backend;
 

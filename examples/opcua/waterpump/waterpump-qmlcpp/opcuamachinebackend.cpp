@@ -263,7 +263,8 @@ void OpcUaMachineBackend::machineWriteTank2TargetPercent(double value)
 
 void OpcUaMachineBackend::startPump()
 {
-    m_machineNode->callMethod("ns=2;s=Machine.Start");
+	QOpcUa::TypedVariant v(3, QOpcUa::Types::Int32);
+	m_machineNode->callMethod("ns=2;s=Machine.Start");// , QVector<QOpcUa::TypedVariant>({ v }));
 }
 
 void OpcUaMachineBackend::stopPump()

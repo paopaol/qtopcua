@@ -48,8 +48,8 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
-import QtOpcUa 5.13 as QtOpcUa
+import QtQuick 2.9
+import QtOpcUa 5.9 as QtOpcUa
 
 Item {
     readonly property alias tank1: tank1

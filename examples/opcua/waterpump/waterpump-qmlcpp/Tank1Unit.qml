@@ -48,8 +48,8 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
-import QtQuick.Controls 2.3
+import QtQuick 2.9
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import OpcUaMachineBackend 1.0
 
@@ -62,8 +62,7 @@ Item {
             Button {
                 id: startButton
                 text: "Start"
-                enabled: uaBackend.connected && uaBackend.machineState === OpcUaMachineBackend.MachineState.Idle &&
-                         uaBackend.percentFilledTank1 > 0 && uaBackend.percentFilledTank2 < uaBackend.tank2TargetPercent
+                enabled:true
                 onClicked: uaBackend.startPump()
             }
             Button {

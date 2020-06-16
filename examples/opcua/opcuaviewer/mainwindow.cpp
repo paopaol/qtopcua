@@ -61,6 +61,7 @@
 #include <QOpcUaProvider>
 #include <QOpcUaAuthenticationInformation>
 #include <QOpcUaErrorState>
+#include <array>
 
 QT_BEGIN_NAMESPACE
 

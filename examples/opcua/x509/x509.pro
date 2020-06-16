@@ -3,6 +3,7 @@ QT -= gui
 CONFIG += c++11
 DEPENDPATH += INCLUDEPATH
 
+
 SOURCES += main.cpp
 
 #install

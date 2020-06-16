@@ -754,7 +754,12 @@ void QOpcUaGdsClientPrivate::start()
         qCDebug(QT_OPCUA_GDSCLIENT) << "Creating a key";
         keyPair.generateRsaKey(QOpcUaKeyPair::RsaKeyStrength::Bits1024);
 
-        if (!keyFile.open(QFile::WriteOnly | QFile::NewOnly)) {
+        if(keyFile.exists()){
+            qCWarning(QT_OPCUA_GDSCLIENT) << "Failed to open private key file" << keyFile.fileName() << "for writing:" << keyFile.errorString();
+            setError(QOpcUaGdsClient::Error::ConnectionError);
+        }
+
+        if (!keyFile.open(QFile::WriteOnly)) {
             qCWarning(QT_OPCUA_GDSCLIENT) << "Failed to open private key file" << keyFile.fileName() << "for writing:" << keyFile.errorString();
             setError(QOpcUaGdsClient::Error::ConnectionError);
             return;
@@ -809,7 +814,12 @@ void QOpcUaGdsClientPrivate::start()
         csr.setEncoding(QOpcUaX509CertificateSigningRequest::Encoding::DER);
         auto selfSigned = csr.createSelfSignedCertificate(keyPair);
 
-        if (!certFile.open(QFile::WriteOnly | QFile::NewOnly)) {
+        if(certFile.exists()){
+            qCWarning(QT_OPCUA_GDSCLIENT) << "Failed to open private key file" << keyFile.fileName() << "for writing:" << keyFile.errorString();
+            setError(QOpcUaGdsClient::Error::ConnectionError);
+        }
+
+        if (!certFile.open(QFile::WriteOnly )) {
             qCWarning(QT_OPCUA_GDSCLIENT) << "Failed to open certificate file" << certFile.fileName() << "for writing:" << certFile.errorString();
             setError(QOpcUaGdsClient::Error::ConnectionError);
             return;

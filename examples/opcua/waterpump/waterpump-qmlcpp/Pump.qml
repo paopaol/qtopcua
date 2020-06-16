@@ -48,7 +48,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
+import QtQuick 2.9
 import OpcUaMachineBackend 1.0
 
 Rectangle {

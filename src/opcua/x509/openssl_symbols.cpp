@@ -874,7 +874,7 @@ bool q_resolveOpenSslSymbols()
     if (symbolsResolved.loadAcquire())
         return true;
     QMutexLocker locker(&symbolResolveMutex);
-    if (symbolsResolved.loadRelaxed())
+    if (symbolsResolved.loadAcquire())
         return true;
     if (triedToResolveSymbols)
         return false;

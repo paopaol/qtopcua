@@ -97,6 +97,7 @@
 #endif // Q_OS_WIN
 
 #include <QtCore/qglobal.h>
+#include <qopcuaglobal.h>
 
 QT_BEGIN_NAMESPACE
 

@@ -48,9 +48,9 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
+import QtQuick 2.9
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.3
+import QtQuick.Controls 2.2
 import OpcUaMachineBackend 1.0
 
 RowLayout {
@@ -70,7 +70,7 @@ RowLayout {
         Layout.fillHeight: false
         Layout.preferredHeight: tank1unit.tankHeight
         Layout.alignment: Qt.AlignBottom
-        enabled: uaBackend.connected && uaBackend.machineState === OpcUaMachineBackend.MachineState.Idle
+        enabled: true
         from: 0
         to: 100
         value: uaBackend.tank2TargetPercent

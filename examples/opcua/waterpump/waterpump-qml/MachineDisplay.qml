@@ -49,10 +49,10 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.10
+import QtQuick 2.9
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.3
-import QtOpcUa 5.13 as QtOpcUa
+import QtQuick.Controls 2.2
+import QtOpcUa 5.9 as QtOpcUa
 import "qrc:/machine"
 
 RowLayout {

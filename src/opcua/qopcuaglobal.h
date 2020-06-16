@@ -50,6 +50,7 @@ QT_BEGIN_NAMESPACE
 #else
 #    define Q_OPCUA_EXPORT
 #endif
+#define QT_FEATURE_opensslv11 1
 
 QT_END_NAMESPACE
 
